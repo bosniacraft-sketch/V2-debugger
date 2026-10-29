@@ -1,0 +1,19 @@
+[package]
+name = "lua51"
+license = "MIT"
+description = "v2probe: proxy for Victoria 2's lua51.dll: forwards to lua5.1.dll and logs engine Lua use."
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+path = "src/lib.rs"
+
+# Standalone: not part of any workspace (32-bit Windows only).
+[workspace]
+
+[profile.release]
+panic = "abort"
+opt-level = 2
+debug = false
